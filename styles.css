@@ -6,6 +6,7 @@
     height: 100vh;
     background-color: hsl(0, 0%, 15%);
 }
+
 #calculator{
     font-family: Arial, sans-serif;
     background-color: hsl(0, 0%, 15%);
@@ -13,10 +14,11 @@
     max-width: 100%;
     overflow: hidden;
 }
+
 #display{
     width: 100%;
     padding: 20px;
-    font-size: 5rem;
+    font-size: 3rem; /* Dikurangi untuk mobile */
     text-align: left;
     border: none;
     background-color: hsl(0, 0%, 20%);
@@ -30,15 +32,14 @@
     padding: 25px;
 }
 
-
 button{
-    width: 100px;
-    height: 100px;
+    width: 70px; /* Lebar tombol dikurangi untuk mobile */
+    height: 70px; /* Tinggi tombol dikurangi untuk mobile */
     border-radius: 50px;
     border: none;
     background-color: hsl(0, 0%, 30%);
     color: white;
-    font-size: 3rem;
+    font-size: 2rem; /* Ukuran font dikurangi */
     font-weight: bold;
     cursor: pointer;
 }
@@ -56,4 +57,37 @@ button:active{
 }
 .operator-btn:active{
     background-color: hsl(35, 100%, 75%);
+}
+
+/* Media query untuk layar lebih kecil seperti HP */
+@media (max-width: 768px) {
+    #display {
+        font-size: 2.5rem; /* Sesuaikan ukuran teks pada layar kecil */
+    }
+
+    button {
+        width: 60px; /* Sesuaikan lebar tombol pada layar kecil */
+        height: 60px; /* Sesuaikan tinggi tombol pada layar kecil */
+        font-size: 1.8rem; /* Kurangi ukuran font untuk tombol */
+    }
+
+    #keys {
+        gap: 8px; /* Kurangi jarak antar tombol */
+    }
+}
+
+@media (max-width: 480px) {
+    #display {
+        font-size: 2rem; /* Lebih kecil lagi pada layar sangat kecil */
+    }
+
+    button {
+        width: 50px; /* Lebar tombol lebih kecil */
+        height: 50px; /* Tinggi tombol lebih kecil */
+        font-size: 1.5rem; /* Ukuran font lebih kecil */
+    }
+
+    #keys {
+        gap: 6px; /* Sesuaikan jarak antar tombol */
+    }
 }
